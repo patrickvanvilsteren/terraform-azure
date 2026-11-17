@@ -1,20 +1,20 @@
 # Configure the Azure provider
 terraform {
-    required_providers {
-        azurerm = {
-            source = "hashicorp/azurerm"
-            version = "~> 3.0"
-        }
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0"
     }
+  }
 
-    required_version = ">= 1.2"
+  required_version = ">= 1.2"
 }
 
 provider "azurerm" {
-    features {}
+  features {}
 }
 
 resource "azurerm_resource_group" "rg" {
-    name = "pat-resource-group"
-    location = "West Europe"
+  name     = var.resourcename
+  location = var.location
 }
